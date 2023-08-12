@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import { Toaster, toast } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import { useContext, useEffect } from "react";
 import axios from "axios";
 import { Context, server } from ".";

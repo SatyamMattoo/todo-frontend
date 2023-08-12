@@ -14,7 +14,6 @@ const Home = () => {
   const [description, setDescription] = useState("");
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [load, setLoad] = useState(false);
   const [refresh,setRefresh]= useState(true);
 
   const updateTask = async (id) => {
@@ -28,28 +27,10 @@ const Home = () => {
       );
       setRefresh(prev=>!prev);
       toast.success("Task Updated");
-    } catch (error) {
+    }  catch (error) {
       toast.success(error.response.data.message);
     }
   };
-
-  const deleteTask = async (id) => {
-    try {
-      setLoad(true);
-      await axios.delete(
-        `${server}/tasks/${id}`,
-        {
-          withCredentials: true,
-        }
-        );
-        setRefresh(prev=>!prev);
-        setLoad(false);
-        toast.success("Task Deleted");
-      } catch (error) {
-        setLoad(false);
-        toast.success(error.response.data.message);
-      }
-    };
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -126,7 +107,6 @@ const Home = () => {
             updateTask={updateTask}
             deleteTask={deleteTask}
             id={i._id}
-            loading={load}
           />
         ))}
       </div>

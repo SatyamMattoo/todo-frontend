@@ -1,7 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "../styles/tasks.scss"
 
-const Tasks = ({title,description,isCompleted,deleteTask,updateTask,id,loading}) => {
+const Tasks = ({title,description,isCompleted,deleteTask,updateTask,id}) => {
+  const [load, setLoad] = useState(false);
+
+  const deleteTask = async (id) => {
+    try {
+      setLoad(true);
+      await axios.delete(
+        `${server}/tasks/${id}`,
+        {
+          withCredentials: true,
+        }
+        );
+        setRefresh(prev=>!prev);
+        setLoad(false);
+        toast.success("Task Deleted");
+      } catch (error) {
+        setLoad(false);
+        toast.success(error.response.data.message);
+      }
+    };
   return (
     <div className='taskItem'>
       <div className="task">
@@ -10,7 +29,7 @@ const Tasks = ({title,description,isCompleted,deleteTask,updateTask,id,loading})
       </div>
       <div className="taskUpdate">
         <input type="checkbox" onChange={()=>updateTask(id)} checked={isCompleted}/>
-        <button onClick={()=>deleteTask(id)}>{loading?"Deleting...":"Delete"}</button>
+        <button onClick={()=>deleteTask(id)}>{load?"Deleting...":"Delete"}</button>
       </div>
     </div>
   )
