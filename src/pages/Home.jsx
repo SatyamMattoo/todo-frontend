@@ -9,9 +9,7 @@ import { Navigate } from "react-router-dom";
 const Home = () => {
   const { isAuthenticated} = useContext(Context);
 
-  if (!isAuthenticated) 
-    return <Navigate to="/login" />;
-
+  
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [tasks, setTasks] = useState([]);
@@ -96,6 +94,9 @@ const Home = () => {
       });
   }, [refresh]);
 
+  if (!isAuthenticated) {
+  return <Navigate to="/login" />;
+  }
   return (
     <div className="container">
       <form onSubmit={submitHandler}>
