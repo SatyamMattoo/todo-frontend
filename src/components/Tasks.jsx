@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import "../styles/tasks.scss"
+import axios from 'axios';
+import { server } from '..';
+import { toast } from 'react-hot-toast';
 
-const Tasks = ({title,description,isCompleted,updateTask,id}) => {
+const Tasks = ({title,description,isCompleted,updateTask,setRefresh,id}) => {
   const [load, setLoad] = useState(false);
 
   const deleteTask = async (id) => {
@@ -21,6 +24,7 @@ const Tasks = ({title,description,isCompleted,updateTask,id}) => {
         toast.success(error.response.data.message);
       }
     };
+    
   return (
     <div className='taskItem'>
       <div className="task">

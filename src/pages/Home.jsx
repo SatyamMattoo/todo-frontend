@@ -105,6 +105,7 @@ const Home = () => {
             description={i.description}
             isCompleted={i.isCompleted}
             updateTask={updateTask}
+            setRefresh={setRefresh}
             id={i._id}
           />
         ))}
