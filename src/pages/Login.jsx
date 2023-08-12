@@ -63,12 +63,10 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <h6>
-          {" "}
           <input type="checkbox" onClick={passVisibility} /> Show password
         </h6>
-        <button type="submit" disabled={loader}>
-          {" "}
-          Log In
+        <button type="submit">
+          {(loader)?"Loading...":"Log In"}
         </button>
       </div>
       <h6>or</h6>

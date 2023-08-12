@@ -25,7 +25,6 @@ function App() {
         setLoader(false);
       })
       .catch((error) => {
-        toast.error(error.response.data.message);
         setUser({});
         setIsAuthenticated(false);
         setLoader(false);
@@ -38,12 +37,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route
-            path="/profile"
-            element={
-              <Profile name={"Satyam"} email={"satyammatoo@gmail.com"} />
-            }
-          />
+          <Route path="/profile" element={<Profile/>} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>

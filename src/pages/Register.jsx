@@ -74,7 +74,9 @@ const Register = () => {
           {" "}
           <input type="checkbox" onClick={passVisibility} /> Show password
         </h6>
-        <button type="submit" disabled={loader}>Sign Up</button>
+        <button type="submit">         
+          {(loader)?"Loading...":"Sign Up"}
+        </button>
       </div>
       <h4>Already have a account?</h4>
       <Link to="/register">Log In</Link>
