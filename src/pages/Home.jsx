@@ -105,7 +105,6 @@ const Home = () => {
             description={i.description}
             isCompleted={i.isCompleted}
             updateTask={updateTask}
-            deleteTask={deleteTask}
             id={i._id}
           />
         ))}

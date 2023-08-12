@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "../styles/tasks.scss"
 
-const Tasks = ({title,description,isCompleted,deleteTask,updateTask,id}) => {
+const Tasks = ({title,description,isCompleted,updateTask,id}) => {
   const [load, setLoad] = useState(false);
 
   const deleteTask = async (id) => {
