@@ -19,7 +19,6 @@ const Home = () => {
 
   const updateTask = async (id) => {
     try {
-      setLoad(true);
       await axios.put(
         `${server}/tasks/${id}`,
         {},
