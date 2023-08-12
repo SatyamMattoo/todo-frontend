@@ -9,7 +9,8 @@ import { Navigate } from "react-router-dom";
 const Home = () => {
   const { isAuthenticated} = useContext(Context);
 
-  if (!isAuthenticated) return <Navigate to="/login" />;
+  if (!isAuthenticated) 
+    return <Navigate to="/login" />;
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
