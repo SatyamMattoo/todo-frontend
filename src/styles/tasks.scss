@@ -24,9 +24,11 @@
   width: 30%;
 
   .smallIcons{
-    display: flex;
+    margin-left: 1vh;
+    width: 80%;
     align-items: center;
-    justify-content: space-evenly
+    display: flex;
+    justify-content: space-around;
   }
 
   input[type="checkbox"] {
@@ -38,9 +40,9 @@
   }
 
   .speak-button{
-    width: 2vh !important;
-    height:2vh !important;
-    border-radius: 5px;
+    width: 0vh !important;
+    height:0vh !important;
+    border-radius: 100%;
   }
 }
 
