@@ -10,7 +10,8 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const {isAuthenticated,setIsAuthenticated, loader, setLoader}=useContext(Context);
+  const { isAuthenticated, setIsAuthenticated, loader, setLoader } =
+    useContext(Context);
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -36,14 +37,14 @@ const Register = () => {
       setIsAuthenticated(false);
     }
   };
-  
+
   const [hidePass, setHidePass] = useState(false);
 
   const passVisibility = () => {
     setHidePass(!hidePass);
   };
 
-  if(isAuthenticated) return <Navigate to="/"/>
+  if (isAuthenticated) return <Navigate to="/" />;
 
   return (
     <form onSubmit={submitHandler} className="register">
@@ -74,9 +75,7 @@ const Register = () => {
           {" "}
           <input type="checkbox" onClick={passVisibility} /> Show password
         </h6>
-        <button type="submit">         
-          {(loader)?"Loading...":"Sign Up"}
-        </button>
+        <button type="submit">{loader ? "Loading..." : "Sign Up"}</button>
       </div>
       <h4>Already have a account?</h4>
       <Link to="/login">Log In</Link>

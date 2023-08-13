@@ -23,7 +23,7 @@
   flex-direction: column;
   width: 30%;
 
-  .smallIcons{
+  .smallIcons {
     margin-left: 1vh;
     width: 80%;
     align-items: center;
@@ -35,13 +35,14 @@
     @include checkbox;
   }
 
-  button ,.speak-button{
+  button,
+  .speak-button {
     @include button;
   }
 
-  .speak-button{
+  .speak-button {
     width: 0vh !important;
-    height:0vh !important;
+    height: 0vh !important;
     border-radius: 100%;
   }
 }

@@ -65,9 +65,7 @@ const Login = () => {
         <h6>
           <input type="checkbox" onClick={passVisibility} /> Show password
         </h6>
-        <button type="submit">
-          {(loader)?"Loading...":"Log In"}
-        </button>
+        <button type="submit">{loader ? "Loading..." : "Log In"}</button>
       </div>
       <h6>or</h6>
       <h3>Create a account</h3>

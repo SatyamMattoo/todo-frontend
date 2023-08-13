@@ -7,14 +7,13 @@ import { toast } from "react-hot-toast";
 import { Navigate } from "react-router-dom";
 
 const Home = () => {
-  const { isAuthenticated} = useContext(Context);
+  const { isAuthenticated } = useContext(Context);
 
-  
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [refresh,setRefresh]= useState(true);
+  const [refresh, setRefresh] = useState(true);
 
   const updateTask = async (id) => {
     try {
@@ -25,9 +24,9 @@ const Home = () => {
           withCredentials: true,
         }
       );
-      setRefresh(prev=>!prev);
+      setRefresh((prev) => !prev);
       toast.success("Task Updated");
-    }  catch (error) {
+    } catch (error) {
       toast.success(error.response.data.message);
     }
   };
@@ -49,7 +48,7 @@ const Home = () => {
           },
         }
       );
-      setRefresh(prev=>!prev);
+      setRefresh((prev) => !prev);
       setLoading(false);
       toast.success(data.message);
       setTitle("");
@@ -75,7 +74,7 @@ const Home = () => {
   }, [refresh]);
 
   if (!isAuthenticated) {
-  return <Navigate to="/login" />;
+    return <Navigate to="/login" />;
   }
   return (
     <div className="container">
