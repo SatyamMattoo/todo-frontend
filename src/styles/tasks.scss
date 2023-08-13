@@ -27,6 +27,20 @@
   button {
     @include button;
   }
+  .speak-button {
+    padding: 10px 20px;
+    background-color: rgb(188, 0, 245);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .speak-button:hover {
+    background-color: white;
+    color: rgb(188, 0, 245);
+  }
 }
 
 @media screen and (max-width: 768px) {

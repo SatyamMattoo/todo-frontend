@@ -6,6 +6,15 @@ import { toast } from 'react-hot-toast';
 
 const Tasks = ({title,description,isCompleted,updateTask,setRefresh,id}) => {
   const [load, setLoad] = useState(false);
+  
+  const synth = window.speechSynthesis;
+  
+    const handleSpeak = () => {
+      if (title.trim() !== '') {
+        const utterance = new SpeechSynthesisUtterance(title);
+        synth.speak(utterance);
+      }
+    };
 
   const deleteTask = async (id) => {
     try {
@@ -34,6 +43,7 @@ const Tasks = ({title,description,isCompleted,updateTask,setRefresh,id}) => {
       <div className="taskUpdate">
         <input type="checkbox" onChange={()=>updateTask(id)} checked={isCompleted}/>
         <button onClick={()=>deleteTask(id)}>{load?"Deleting...":"Delete"}</button>
+        <button className="speak-button" onClick={handleSpeak}>Speak</button>
       </div>
     </div>
   )
