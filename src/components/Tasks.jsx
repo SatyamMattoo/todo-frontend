@@ -43,7 +43,7 @@ const Tasks = ({title,description,isCompleted,updateTask,setRefresh,id}) => {
       <div className="taskUpdate">
         <input type="checkbox" onChange={()=>updateTask(id)} checked={isCompleted}/>
         <button onClick={()=>deleteTask(id)}>{load?"Deleting...":"Delete"}</button>
-        <button className="speak-button" onClick={handleSpeak}>Speak</button>
+        <button className="speak-button" onClick={handleSpeak}>&#128264;</button>
       </div>
     </div>
   )

@@ -26,14 +26,14 @@ const Register = () => {
           withCredentials: true,
         }
       );
+      setLoader(false);
       toast.success(data.message);
       setIsAuthenticated(true);
-      setLoader(false);
     } catch (error) {
       console.log(error);
+      setLoader(false);
       toast.error(error.response.data.message);
       setIsAuthenticated(false);
-      setLoader(false);
     }
   };
   

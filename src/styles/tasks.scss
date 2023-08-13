@@ -6,10 +6,12 @@
   color: white;
   width: 70%;
   border-radius: 3vh;
-  @include center-flex ;
+  @include center-flex;
 
   .task {
-    @include center-flex ;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     flex-direction: column;
     padding: 3vh;
     width: 70%;
@@ -17,7 +19,7 @@
 }
 
 .taskUpdate {
-  @include center-flex ;
+  @include center-flex;
   width: 30%;
 
   input[type="checkbox"] {
@@ -28,15 +30,15 @@
     @include button;
   }
   .speak-button {
-    padding: 10px 20px;
+    width: 20px;
+    height: 20px;
     background-color: rgb(188, 0, 245);
     color: white;
-    border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
   }
-  
+
   .speak-button:hover {
     background-color: white;
     color: rgb(188, 0, 245);
