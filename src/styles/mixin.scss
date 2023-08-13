@@ -1,0 +1,141 @@
+$primary-color: rgb(188, 0, 245);
+$background-color: rgba(24, 23, 23, 0.979);
+$input-width: 50%;
+$button-transition: all 0.4s;
+
+@mixin center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin form-container {
+  background-color: $background-color;
+  height: 90vh;
+  width: 100%;
+  @include center-flex;
+  flex-direction: column;
+
+  h2 {
+    padding: 3vh;
+    font-size: 2.5rem;
+    font-weight: 100;
+  }
+
+  a {
+    text-align: center;
+    text-decoration: none;
+    padding: 2vh;
+    background-color: black;
+    width: 15vh;
+    border-radius: 3vh;
+    &:hover {
+      cursor: pointer;
+      color: black;
+      background-color: white;
+    }
+  }
+}
+
+.input {
+  width: $input-width;
+  display: flex;
+  flex-direction: column;
+  padding: 1vh;
+
+  input {
+    border: none;
+    outline: none;
+    color: black;
+    font-weight: 500;
+    margin: 0.5vh;
+    padding: 3vh;
+    border-radius: 3vh;
+  }
+
+  h6 {
+    display: flex;
+    align-items: center;
+    padding: 1vh;
+
+    input {
+      margin-right: 1vh;
+    }
+  }
+
+  button {
+    margin: 2vh;
+    padding: 2vh 5vh;
+    background-color: $primary-color;
+    border-radius: 3vh;
+    text-align: center;
+    text-decoration: none;
+    transition: $button-transition;
+
+    &:hover {
+      font-weight: bolder;
+      cursor: pointer;
+      color: $primary-color;
+      background-color: white;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .input {
+    width: 70%;
+  }
+}
+
+@mixin checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  cursor: pointer;
+  border: 2px solid $primary-color;
+  border-radius: 4px;
+  position: relative;
+  transition: background-color 0.3s ease-in-out;
+
+  &::before {
+    content: "\2713";
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    color: white;
+  }
+
+  &:checked::before {
+    display: block;
+  }
+
+  &:checked {
+    background-color: $primary-color;
+  }
+}
+
+@mixin button {
+  margin: 2vh;
+  padding: 2vh;
+  background-color: $primary-color;
+  border-radius: 3vh;
+  width: 70%;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.4s;
+
+  &:hover {
+    font-weight: bolder;
+    cursor: pointer;
+    color: $primary-color;
+    background-color: white;
+  }
+}
+
