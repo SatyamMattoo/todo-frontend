@@ -20,28 +20,27 @@
 
 .taskUpdate {
   @include center-flex;
+  flex-direction: column;
   width: 30%;
+
+  .smallIcons{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly
+  }
 
   input[type="checkbox"] {
     @include checkbox;
   }
 
-  button {
+  button ,.speak-button{
     @include button;
   }
-  .speak-button {
-    width: 20px;
-    height: 20px;
-    background-color: rgb(188, 0, 245);
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-  }
 
-  .speak-button:hover {
-    background-color: white;
-    color: rgb(188, 0, 245);
+  .speak-button{
+    width: 2vh !important;
+    height:2vh !important;
+    border-radius: 5px;
   }
 }
 

@@ -64,6 +64,7 @@ $button-transition: all 0.4s;
   }
 
   button {
+    @include center-flex;
     margin: 2vh;
     padding: 2vh 5vh;
     background-color: $primary-color;
@@ -122,6 +123,7 @@ $button-transition: all 0.4s;
 }
 
 @mixin button {
+  @include center-flex;
   margin: 2vh;
   padding: 2vh;
   background-color: $primary-color;

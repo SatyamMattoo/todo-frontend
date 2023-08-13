@@ -41,9 +41,11 @@ const Tasks = ({title,description,isCompleted,updateTask,setRefresh,id}) => {
         <p className="taskDescription">{description}</p>
       </div>
       <div className="taskUpdate">
+        <div className="smallIcons">
         <input type="checkbox" onChange={()=>updateTask(id)} checked={isCompleted}/>
-        <button onClick={()=>deleteTask(id)}>{load?"Deleting...":"Delete"}</button>
         <button className="speak-button" onClick={handleSpeak}>&#128264;</button>
+        </div>
+        <button onClick={()=>deleteTask(id)}>{load?"Deleting...":"Delete"}</button>
       </div>
     </div>
   )
